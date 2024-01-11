@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+  background-color: rgb(44, 42, 42);
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+}
+
+#container {
+  background-color: rgb(100, 104, 106);
+  width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 100px auto 0;
+  text-align: center;
+}
+
+#informacoes {
+  text-align: left;
+}
+p {
+  color: rgb(255, 254, 254);
+
+  display: flex;
+  align-items: center;
+}
+
+p label {
+  margin-right: 10px;
+}
+
+p input {
+  flex-grow: 1;
+  border: none;
+
+  border-radius: 8px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  height: 30px;
+
+  text-align: center;
+
+  font-size: 16px;
+}
