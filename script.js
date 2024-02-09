@@ -20,7 +20,6 @@ function focusOnFirstEmpty() {
   for (const input of inputs) {
     if (input.value.trim() === "") {
       input.focus();
-
       break; // Parar a busca assim que encontrar o primeiro elemento em branco
     }
   }
@@ -45,9 +44,15 @@ inputCep.addEventListener("blur", () => {
       inputCidade.value = json.localidade;
       inputUF.value = json.uf;
 
-      // Adicionar um pequeno atraso antes de chamar a função para definir o foco
-      setTimeout(() => {
-        focusOnFirstEmpty();
-      }, 10);
+      // Verificar se o campo Número está vazio
+      if (inputNumero.value.trim() === "") {
+        // Definir o foco no campo Número
+        inputNumero.focus();
+      } else {
+        // Caso contrário, adicionar um pequeno atraso antes de chamar a função para definir o foco
+        setTimeout(() => {
+          focusOnFirstEmpty();
+        }, 10);
+      }
     });
 });
