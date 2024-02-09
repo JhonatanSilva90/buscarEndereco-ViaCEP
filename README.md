@@ -5,9 +5,9 @@ Projeto desenvolvido com conceitos de HTML, CSS e JavaScript. <br/>
 
 <br>
 
-<p align="center">
-    <video src="./images/README.mov"></video>
-</p>
+
+https://github.com/JhonatanSilva90/buscarEndereco-ViaCEP/assets/126831089/736dff3d-cead-482e-851a-799934deeb21
+
 
 ## 🚀 Tecnologias
 
