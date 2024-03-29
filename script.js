@@ -1,3 +1,73 @@
+// Criando um elemento div para conter todo o conteúdo
+var containerDiv = document.createElement("div");
+containerDiv.id = "container";
+
+// Criando um elemento h2 com a imagem e o texto
+var h2Element = document.createElement("h2");
+var imgElement = document.createElement("img");
+imgElement.src = "./images/pino-de-localizacao-2.png";
+imgElement.alt = "imagem de uma casa com um ponto de localização";
+h2Element.appendChild(imgElement);
+h2Element.appendChild(document.createTextNode("Buscador de Endereço ViaCep"));
+
+// Criando um hr
+var hrElement = document.createElement("hr");
+
+// Criando um elemento form
+var formElement = document.createElement("form");
+formElement.id = "informacoes";
+formElement.action = "";
+
+// Adicionando os elementos input dentro do form
+var inputs = [
+  {
+    id: "cep",
+    type: "text",
+    placeholder: "Digite apenas números",
+    label: "CEP:",
+  },
+  {
+    id: "logradouro",
+    type: "text",
+    placeholder: "Rua, Travessa, Avenida",
+    label: "Logradouro:",
+  },
+  { id: "numero", type: "text", label: "Número:" },
+  {
+    id: "complemento",
+    type: "text",
+    placeholder: "Ap, Andar, Bloco, Ponto de Referência...",
+    label: "Complemento:",
+  },
+  { id: "bairro", type: "text", label: "Bairro:" },
+  { id: "cidade", type: "text", label: "Cidade:" },
+  { id: "uf", type: "text", label: "UF:" },
+];
+
+inputs.forEach(function (input) {
+  var pElement = document.createElement("p");
+  var labelElement = document.createElement("label");
+  labelElement.setAttribute("for", input.id);
+  labelElement.textContent = input.label;
+  var inputElement = document.createElement("input");
+  inputElement.id = input.id;
+  inputElement.type = input.type;
+  if (input.placeholder) {
+    inputElement.placeholder = input.placeholder;
+  }
+  pElement.appendChild(labelElement);
+  pElement.appendChild(inputElement);
+  formElement.appendChild(pElement);
+});
+
+// Adicionando todos os elementos dentro do containerDiv
+containerDiv.appendChild(h2Element);
+containerDiv.appendChild(hrElement);
+containerDiv.appendChild(formElement);
+
+// Adicionando o containerDiv ao final do corpo do documento
+document.body.appendChild(containerDiv);
+
 const inputCep = document.getElementById("cep");
 const inputLogradouro = document.getElementById("logradouro");
 const inputComplemento = document.getElementById("complemento");
