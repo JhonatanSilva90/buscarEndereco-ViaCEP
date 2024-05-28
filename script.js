@@ -1,25 +1,25 @@
 // Criando um elemento div para conter todo o conteúdo
-var containerDiv = document.createElement("div");
+let containerDiv = document.createElement("div");
 containerDiv.id = "container";
 
 // Criando um elemento h2 com a imagem e o texto
-var h2Element = document.createElement("h2");
-var imgElement = document.createElement("img");
+let h2Element = document.createElement("h2");
+let imgElement = document.createElement("img");
 imgElement.src = "./images/pino-de-localizacao-2.png";
 imgElement.alt = "imagem de uma casa com um ponto de localização";
 h2Element.appendChild(imgElement);
 h2Element.appendChild(document.createTextNode("Buscador de Endereço ViaCep"));
 
 // Criando um hr
-var hrElement = document.createElement("hr");
+let hrElement = document.createElement("hr");
 
 // Criando um elemento form
-var formElement = document.createElement("form");
+let formElement = document.createElement("form");
 formElement.id = "informacoes";
 formElement.action = "";
 
 // Adicionando os elementos input dentro do form
-var inputs = [
+let inputs = [
   {
     id: "cep",
     type: "text",
@@ -45,11 +45,11 @@ var inputs = [
 ];
 
 inputs.forEach(function (input) {
-  var pElement = document.createElement("p");
-  var labelElement = document.createElement("label");
+  let pElement = document.createElement("p");
+  let labelElement = document.createElement("label");
   labelElement.setAttribute("for", input.id);
   labelElement.textContent = input.label;
-  var inputElement = document.createElement("input");
+  let inputElement = document.createElement("input");
   inputElement.id = input.id;
   inputElement.type = input.type;
   if (input.placeholder) {
@@ -126,3 +126,70 @@ inputCep.addEventListener("blur", () => {
       }
     });
 });
+
+// // Adicionando o footer via JS
+
+// Criando os elementos do footer
+const footer = document.createElement("footer");
+
+// Criando o contêiner interno
+const footerContainer = document.createElement("div");
+footerContainer.classList.add("footer"); // Adicionando classe para estilização
+
+// Criando logo
+const logo = document.createElement("a");
+logo.classList.add("logo-footer");
+logo.href = ""; // Definir href se necessário
+
+// Criando spans separados para JH e Developer
+const spanJH = document.createElement("span");
+spanJH.classList.add("logo-footer");
+spanJH.innerText = "JH";
+
+const spanDeveloper = document.createElement("span");
+spanDeveloper.classList.add("logo-footer");
+spanDeveloper.innerText = "Developer";
+
+// Adicionando spans ao âncora do logo
+logo.appendChild(spanJH);
+logo.appendChild(spanDeveloper);
+
+// Criando seção de direitos reservados
+const reserved = document.createElement("div");
+reserved.classList.add("reserved");
+const reservedText = document.createElement("p");
+reservedText.innerText = "© 2024 JHDeveloper. Todos os direitos reservados.";
+reserved.appendChild(reservedText);
+
+// Criando contêiner de links sociais
+const link = document.createElement("div");
+link.classList.add("links-footer");
+
+// Criando link do Linkedin
+const linkedinLink = document.createElement("a");
+linkedinLink.href = "https://www.linkedin.com/in/jhonatan-silva-834773292";
+const linkedinImg = document.createElement("img");
+linkedinImg.src = "./images/linkedin.png";
+linkedinImg.alt = "LinkedIn";
+linkedinLink.appendChild(linkedinImg);
+
+// Criando link do Github
+const githubLink = document.createElement("a");
+githubLink.href = "https://github.com/JhonatanSilva90";
+const githubImg = document.createElement("img");
+githubImg.src = "./images/github.png";
+githubImg.alt = "GitHub";
+githubLink.appendChild(githubImg);
+
+// Adicionando elementos aos seus contêineres
+link.appendChild(linkedinLink);
+link.appendChild(githubLink);
+footerContainer.appendChild(logo);
+footerContainer.appendChild(reserved);
+footerContainer.appendChild(link);
+
+// Adicionando contêiner ao footer
+footer.appendChild(footerContainer);
+
+// Adicionando footer ao corpo
+document.body.appendChild(footer);

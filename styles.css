@@ -4,6 +4,13 @@
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
 }
+
+:root {
+  --cor-white: #ffffff;
+  --cor-black: hsl(0, 0%, 0%);
+  --cor-yellow: #ffff00;
+  --cor-footer: #5a5959;
+}
 body {
   background-color: rgb(44, 42, 42);
 }
@@ -51,4 +58,46 @@ p input {
   text-align: center;
 
   font-size: 16px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center; /* Alinha os itens no centro do eixo Y */
+  width: 100%; /* Para que o footer ocupe todo o eixo X da página */
+  color: var(--cor-white);
+  padding: 20px; /* Tamanho do eixo Y do footer */
+  background-color: var(--cor-footer);
+}
+
+.footer span:first-child {
+  color: var(--cor-yellow);
+}
+.footer span:last-child {
+  color: var(--cor-white);
+}
+
+.logo-footer {
+  font-family: "Tektur", sans-serif;
+  font-size: 1rem;
+  background-color: var(--cor-footer);
+}
+
+.footer a {
+  background-color: var(--cor-footer);
+}
+.footer img {
+  background-color: var(--cor-footer);
+}
+.footer p {
+  background-color: var(--cor-footer);
+}
+
+.links-footer {
+  display: flex;
+  background-color: var(--cor-footer);
+  gap: 1rem;
 }
